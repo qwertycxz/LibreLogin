@@ -15,7 +15,7 @@ import org.apache.logging.log4j.core.Logger;
 import org.apache.logging.log4j.message.Message;
 
 /**
- * A Log4J implementation of the LogFilter that filters out sensitive authentication commands.
+ * A Log4J implementation of the {@link LogFilter} that filters out sensitive authentication commands.
  * <p>
  * This class extends {@link LogFilter} and implements Log4J's {@link Filter} interface to provide filtering capabilities for Log4J logging system.
  * <p>
@@ -31,7 +31,7 @@ public class Log4JFilter extends LogFilter implements Filter {
     }
 
     /**
-     * Converts the result of message checking into a Log4J {@link Filter#Result}.
+     * Converts the result of message checking into a Log4J {@link Result}.
      *
      * @param message The message pattern to be checked
      * @param parameters The parameters associated with the message. Must not be null
