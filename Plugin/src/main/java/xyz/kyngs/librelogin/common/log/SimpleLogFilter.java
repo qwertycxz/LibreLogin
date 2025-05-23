@@ -40,11 +40,7 @@ public class SimpleLogFilter extends LogFilter implements Filter {
     @Override
     public boolean isLoggable(LogRecord record) {
         if (filter != null && !filter.isLoggable(record)) return false;
-        var parameters = record.getParameters();
-        if (parameters == null) {
-            parameters = new Object[0];
-        }
-        return checkMessage(record.getMessage(), parameters);
+        return checkMessage(record.getMessage(), record.getParameters());
     }
 
     @Override

@@ -34,7 +34,7 @@ public class Log4JFilter extends LogFilter implements Filter {
      * Converts the result of message checking into a Log4J {@link Result}.
      *
      * @param message The message pattern to be checked
-     * @param parameters The parameters associated with the message. Must not be null
+     * @param parameters The parameters associated with the message.
      * @return {@link Result#NEUTRAL} if the message should be logged, {@link Result#DENY} if it should be filtered out
      * @see LogFilter#checkMessage
      */
@@ -109,7 +109,7 @@ public class Log4JFilter extends LogFilter implements Filter {
 
     @Override
     public Result filter(Logger logger, Level level, Marker marker, Object msg, Throwable t) {
-        return checkMessageResult(msg.toString(), new Object[0]);
+        return checkMessageResult(msg.toString(), null);
     }
 
     @Override

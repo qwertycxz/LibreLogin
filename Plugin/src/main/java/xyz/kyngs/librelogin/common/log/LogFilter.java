@@ -43,11 +43,11 @@ public abstract class LogFilter {
      * Checks if a log message containing a command should be filtered out.
      *
      * @param message The message pattern being logged
-     * @param parameters The parameters being used in the message. Must not be null
+     * @param parameters The parameters being used in the message.
      * @return {@code true} if the message should be logged, {@code false} if it should be filtered out
      */
     protected boolean checkMessage(String message, Object[] parameters) {
-        if (parameters.length <= 1 || !(parameters[1] instanceof String)) return true;
+        if (parameters == null || parameters.length <= 1 || !(parameters[1] instanceof String)) return true;
 
         var executed = switch (message) {
             case "{} issued server command: {}" -> (String)parameters[1];
